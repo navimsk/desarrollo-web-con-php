@@ -3,7 +3,7 @@ session_start();
 
 if(isset($_SESSION['user_id'])){
 //el suuario ya está logueado
-header("Location: ../../../dashboard/");
+header("Location: ../../../backoffice/");
 exit();
 }
 
@@ -20,7 +20,7 @@ $_SESSION['user_id'] = 1;
 $_SESSION['username'] = 'profe :)';
 
 
-header("Location: ../../../dashboard/");
+header("Location: ../../../backoffice/");
 exit();
 } 
 else{

@@ -3,7 +3,7 @@ session_start();
 
 if(isset($_SESSION['user_id'])){
 //el suuario ya está logueado
-header("Location: ../../dashboard/");
+header("Location: ../../backoffice/");
 exit();
 }
 ?>
