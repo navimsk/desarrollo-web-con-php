@@ -19,11 +19,12 @@ if($user === $formUsername && $pass === $formPassword){
 $_SESSION['user_id'] = 1;
 $_SESSION['username'] = 'profe :)';
 
-
+http_response_code(200);
 header("Location: ../../../dashboard/");
 exit();
-} 
-else{
+} else{
+    http_response_code(401);
+    
     header("Location: ../index.php?error=1");
     exit();
 }
