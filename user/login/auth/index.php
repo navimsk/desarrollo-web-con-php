@@ -25,4 +25,4 @@ exit();
 
 $_SESSION['error'] = ['login' => 'Error de usuario o contraseña'];
     header("Location: ../");
-  
+// Logout: Cerramos la sesión y redirigimos al usuario a la página de inicio
