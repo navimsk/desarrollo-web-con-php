@@ -16,13 +16,13 @@ $pass = 'holaMundo!';
 
 if($user === $formUsername && $pass === $formPassword){
 
-$_SESSION['user_id'] = 1;
-$_SESSION['username'] = 'profe :)';
+    $_SESSION['user_id'] = 1;
+    $_SESSION['username'] = 'profe :)';
+    $_SESSION['error'] = ['login' => ''];
 
-header("Location: ../../../backoffice/");
-exit();
+    header("Location: ../../../backoffice/");
+    exit();
 } 
 
 $_SESSION['error'] = ['login' => 'Error de usuario o contraseña'];
     header("Location: ../");
-

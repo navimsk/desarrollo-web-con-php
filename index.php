@@ -7,7 +7,7 @@ session_start();
 // echo '</pre>';
 
 if (isset($_SESSION['user_id'])) {
-  header('Location: dashboard');
+  header('Location: backoffice/');
   exit();
 } else {
     header('Location: user/login/index.php');
