@@ -95,7 +95,10 @@ $_SESSION['titulos'] = ['webTitle' => 'Programacion Web en PHP'];
                 <ol class="breadcrumb float-sm-end">
                   <li class="breadcrumb-item"><a href="/desarrollo-web-con-php/">Backoffice</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Usuarios</li>
-                  <li class="breadcrumb-item active"><button class="btn btn-sm btn-outline-primary">Agregar usuario<i class="bi bi-plus"></i></button></li>
+                  <li class="breadcrumb-item active"><button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#mantenedorAgregar">
+                      Agregar usuario
+                      <i class="bi bi-plus"></i>
+                    </button></li>
                 </ol>
               </div>
             </div>
@@ -137,6 +140,7 @@ $_SESSION['titulos'] = ['webTitle' => 'Programacion Web en PHP'];
                           <th>ID</th>
                           <th>Nombre</th>
                           <th>Email</th>
+                          <th>Estado</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
@@ -145,9 +149,20 @@ $_SESSION['titulos'] = ['webTitle' => 'Programacion Web en PHP'];
                           <td>1</td>
                           <td>Juan Ejemplo</td>
                           <td>juan.ejemplo@example.com</td>
+                          <td><span class="badge bg-success">Activo</span></td>
                           <td>
-                            <button class="btn btn-sm btn-primary">Editar</button>
-                            <button class="btn btn-sm btn-danger">Eliminar</button>
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                Acciones
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Ver</a></li>
+                                <li><a class="dropdown-item" href="#">Apagar</a></li>
+                                <li><a class="dropdown-item" href="#">Editar</a></li>
+                                <li><a class="dropdown-item" href="#">Encender</a></li>
+
+                              </ul>
+                            </div>
                           </td>
                         </tr>
                       </tbody>
@@ -166,6 +181,28 @@ $_SESSION['titulos'] = ['webTitle' => 'Programacion Web en PHP'];
           <!--end::Container-->
         </div>
         <!--end::App Content-->
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="mantenedorAgregar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="agregarLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="agregarLabel">Agregar usuario</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <from action="" method="post">
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                  </div>
+              </from>
+            </div>
+          </div>
+        </div>  
       </main>
       <!--end::App Main-->
       <!--begin::Footer-->
