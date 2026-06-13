@@ -3,9 +3,23 @@ session_start();
 
 if(isset($_SESSION['user_id'])){
 //el suuario ya está logueado
-header("Location: ../../backoffice/");
+header("Location: ../../dashboard/");
 exit();
 }
+
+$msgError = ' ';
+try {
+  if (isset($_SESSION['error']['login'])) {
+      $msgError = $_SESSION['error']['login'];
+  }
+  else{ 
+    $msgError = 0 ;
+  }
+  
+} catch (\Throwable $th) {
+  $msgError = 'exception';
+}
+echo $msgError;
 ?>
 
 
@@ -85,9 +99,16 @@ exit();
         <div class="card-body login-card-body">
           <p class="login-box-msg">Hola, bienvenido de nuevo!</p>
 
-    
+          <?php
+          if ($msgError != 0) {
+          echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
+          echo  '<strong>Error 1!</strong> ' . $msgError;
+          echo ' <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+          echo  '</div>';
 
-          <form action="validate/index.php" method="post">
+          }
+          ?>
+          <form action="auth/" method="post">
             <div class="input-group mb-3">
               <input type="email" class="form-control" placeholder="Ingrese su email"  name="username"/>
               <div class="input-group-text">
@@ -103,9 +124,7 @@ exit();
             <!-- Aca puse el mensaje de error si el user o pass son malos -->
 
                <?php if (isset($_GET['error'])): ?>
-    <div class="alert alert-danger py-2" role="alert" style="font-size: 0.85rem;">
-        <i class="bi bi-x-circle-fill"></i>  Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.
-    </div>
+  
 <?php endif; ?>
             <!--begin::Row-->
             <div class="row">

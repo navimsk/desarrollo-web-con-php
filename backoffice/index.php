@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 if(!isset($_SESSION['user_id'])) {
@@ -6,8 +7,10 @@ if(!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$ruta = ['assets' => '../', 'components' => '../'];
+$ruta = ['assets' => '../', 'components' => ''];
 $_SESSION['ruta'] = $ruta;
+$_SESSION['titulos'] = ['webTitle' => 'Programacion Web en PHP'];
+
 ?>
 
 
@@ -16,7 +19,7 @@ $_SESSION['ruta'] = $ruta;
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Programacion Web</title>
+    <title><?php echo $_SESSION['titulos']['webTitle']; ?></title>
 
     <!--begin::Accessibility Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />

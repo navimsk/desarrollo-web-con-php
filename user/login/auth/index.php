@@ -3,7 +3,7 @@ session_start();
 
 if(isset($_SESSION['user_id'])){
 //el suuario ya está logueado
-header("Location: ../../../backoffice/");
+header("Location: ../../../dashboard/");
 exit();
 }
 
@@ -19,11 +19,9 @@ if($user === $formUsername && $pass === $formPassword){
 $_SESSION['user_id'] = 1;
 $_SESSION['username'] = 'profe :)';
 
-
 header("Location: ../../../backoffice/");
 exit();
 } 
-else{
-    header("Location: ../index.php?error=1");
-    exit();
-}
+
+$_SESSION['error'] = ['login' => 'Error de usuario o contraseña'];
+    header("Location: ../");
