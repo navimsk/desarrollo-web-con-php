@@ -191,15 +191,28 @@ $_SESSION['titulos'] = ['webTitle' => 'Programacion Web en PHP'];
                 <h1 class="modal-title fs-5" id="agregarLabel">Agregar usuario</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <from action="" method="post">
+              <form action="./add/" method="post">
                   <div class="modal-body">
-                    ...
+                  <input type="email" class="form-control mb-3" id="email" name="email" placeholder="Usuario: Correo electrónico" required>
+                  <input type="text" class="form-control mb-3" id="nombre" name="nombre" placeholder="Nombre" required>
+                  <input type="text" class="form-control mb-3" id="apellido" name="apellido" placeholder="Apellido" required>
+                  <input type="password" class="form-control mb-3" id="password" name="password" placeholder="Contraseña" required>
+                  <input type="password" class="form-control mb-3" id="password2" name="password2" placeholder="Confirmar contraseña" required>
+                  </div>
+                  <div class="form-floating">
+                    <select class="form-select" id="rol" name="rol" aria-label="Floating label select">
+                      <option value="" selected disabled>Seleccione un rol</option>
+                      <option value="admin">Administrador</option>
+                      <option value="editor">Vendedor</option>
+                      <option value="viewer">Usuario</option>
+                    </select>
+                    <label for="rol">Rol de usuario</label>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Agregar</button>
                   </div>
-              </from>
+              </form>
             </div>
           </div>
         </div>  
