@@ -7,19 +7,14 @@ header("Location: ../../dashboard/");
 exit();
 }
 
-$msgError = ' ';
+$msgError = '';
 try {
   if (isset($_SESSION['error']['login'])) {
       $msgError = $_SESSION['error']['login'];
   }
-  else{ 
-    $msgError = 0 ;
-  }
-  
 } catch (\Throwable $th) {
   $msgError = 'exception';
 }
-echo $msgError;
 ?>
 
 
@@ -100,7 +95,7 @@ echo $msgError;
           <p class="login-box-msg">Hola, bienvenido de nuevo!</p>
 
           <?php
-          if ($msgError != 0) {
+          if ($msgError !== '') {
           echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
           echo  '<strong>Error 1!</strong> ' . $msgError;
           echo ' <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
