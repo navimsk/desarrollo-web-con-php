@@ -1,11 +1,10 @@
 <?php
-$project = ['url' => 'desarrollo-web-con-php'];
-?> 
+?>
 <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
         <!--begin::Sidebar Brand-->
         <div class="sidebar-brand">
           <!--begin::Brand Link-->
-          <a href="/<?php echo $project['url']; ?>/backoffice" class="brand-link">
+          <a href="/backoffice" class="brand-link">
             <!--begin::Brand Image-->
             <img
               src="<?php echo $_SESSION['ruta']['assets']; ?>assets/img/AdminLTELogo.png"
@@ -308,7 +307,7 @@ $project = ['url' => 'desarrollo-web-con-php'];
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="/<?php echo $project['url']; ?>/backoffice/users" class="nav-link">
+                    <a href="/backoffice/users" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Usuarios</p>
                     </a>
